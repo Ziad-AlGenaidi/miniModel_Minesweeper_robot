@@ -1,0 +1,90 @@
+import pygame
+from pygame.locals import *
+import RPi.GPIO as gpio
+import time
+import sys
+
+def init():
+    gpio.setmode(gpio.BCM)
+    gpio.setup(17, gpio.OUT)
+    gpio.setup(22, gpio.OUT)
+    gpio.setup(23, gpio.OUT)
+    gpio.setup(24, gpio.OUT)
+
+def forward(sec):
+    init()
+    gpio.output(17,False)
+    gpio.output(22, True)
+    gpio.output(23, False)
+    gpio.output(24, True)
+    #time.sleep(sec)
+    #gpio.cleanup()
+
+def reverse(sec):
+    init()
+    gpio.output(17, True)
+    gpio.output(22, False)
+    gpio.output(23, True)
+    gpio.output(24, False)
+    #time.sleep(sec)
+    #gpio.cleanup()
+
+def turn_left(sec):
+    init()
+    gpio.output(17, True)
+    gpio.output(22, False)
+    gpio.output(23, False)
+    gpio.output(24, True)
+    #time.sleep(sec)
+    #gpio.cleanup()
+
+def turn_right(sec):
+    init()
+    gpio.output(17, False)
+    gpio.output(22, True)
+    gpio.output(23, True)
+    gpio.output(24, False)
+    #time.sleep(sec)
+    #gpio.cleanup()
+
+def stop():
+    init()
+    gpio.output(17, False)
+    gpio.output(22, False)
+    gpio.output(23, False)
+    gpio.output(24, False)
+    #gpio.cleanup()
+
+seconds = 1
+pygame.init()
+
+display = pygame.display.set_mode([300,300])
+
+while True:
+    for event in pygame.event.get():
+        if event.type ==  pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_w:
+                forward(seconds)
+
+            if event.key == pygame.K_s:
+                reverse(seconds)
+            
+            if event.key == pygame.K_d:
+                turn_right(seconds)
+            
+            if event.key == pygame.K_a:
+                turn_left(seconds)
+
+            if event.key == pygame.K_ESCAPE:
+                stop()
+                break
+        
+        if event.type == pygame.KEYUP:
+            stop()
+
+sys.exit()
+pygame.exit()
