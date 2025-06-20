@@ -4,4 +4,5 @@ There is a webcam to make a real time streaming via RTSP server you can download
 Note: you need to download these libraries pygame, RPI.GPIO in your python version on raspberry pi.
 Metal detector code and motors speed in the same file upload it to the arduino uno.
 For keyboard control you need to connect your raspberry pi and station(ex:laptop) to the same network, Then display raspberry pi via vnc viewer and run python code on raspberry pi.
-![54725c8f-e458-4912-8734-b7d1d487819d](https://github.com/user-attachments/assets/73d018cf-14c7-4742-a912-bae7ab96cab5)
+
+![17051c3d-f34f-4c3e-9ef7-f5e688ca21d1](https://github.com/user-attachments/assets/13b11964-bb6b-4d58-be0e-82c6dbf228bc)
