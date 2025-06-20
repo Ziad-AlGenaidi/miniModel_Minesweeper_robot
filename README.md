@@ -5,4 +5,4 @@ Note: you need to download these libraries pygame, RPI.GPIO in your python versi
 Metal detector code and motors speed in the same file upload it to the arduino uno.
 For keyboard control you need to connect your raspberry pi and station(ex:laptop) to the same network, Then display raspberry pi via vnc viewer and run python code on raspberry pi.
 
-![17051c3d-f34f-4c3e-9ef7-f5e688ca21d1](https://github.com/user-attachments/assets/13b11964-bb6b-4d58-be0e-82c6dbf228bc)
+![edited](https://github.com/user-attachments/assets/90000dc8-f437-4bbe-a640-b298867a77b7)
